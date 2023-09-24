@@ -1,4 +1,5 @@
 // import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
           <Person  name= {nayok}></Person>
         )
       } */}
+
+      <ExternalUsers></ExternalUsers>
     </div>
   );
 }
@@ -18,6 +21,19 @@ function App() {
 // add new component 
 
 function ExternalUsers(){
+  const [users, setUsers] = useState([]);
+  useEffect(()=>{
+    fetch(`https://jsonplaceholder.typicode.com/users`)
+    .then(res =>res.json())
+    .then(data =>{
+      console.log('the api list is:', data);
+     setUsers(data);
+     console.log('the user data is ', users);
+      
+
+    })
+
+  },[])
   return(
     <div>
       <h1>External users</h1>
