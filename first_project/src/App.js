@@ -11,9 +11,6 @@ function App() {
           <Person  name= {nayok}></Person>
         )
       }
-       {/* call kora hoyese  */}
-       {/* <Person title="REACT"></Person> */}
-
     </div>
   );
 }
