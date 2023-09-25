@@ -37,6 +37,25 @@ function ExternalUsers(){
   return(
     <div>
       <h1>External users</h1>
+
+      {
+        users.map((user) =>{
+          return(
+            <User userName = {user.name} userEmail = {user.email} ></User>
+          )
+        })
+      }
+    </div>
+  )
+}
+
+// show the name of user component 
+
+function User(props){
+  return(
+    <div>
+      <h1>User name is: {props.userName}</h1>
+      <h2>user email is : {props.userEmail}</h2>
     </div>
   )
 }
