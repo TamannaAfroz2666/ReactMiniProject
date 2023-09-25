@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Countries.css'
+import LoadCountry from '../LoadCountrys/LoadCountry';
 
 const Countries = () => {
     const [countries, setCountries] = useState([])
@@ -17,6 +18,17 @@ const Countries = () => {
     return (
         <div>
             <h2>show the country list Lenght {countries.length}</h2>
+
+            {
+                countries.map((country) =>{
+                    return(
+                        <LoadCountry
+                         CountryName ={country}>
+
+                         </LoadCountry>
+                    )
+                })
+            }
         </div>
     );
 };
