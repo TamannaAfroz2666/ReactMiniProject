@@ -17,8 +17,8 @@ const Countries = () => {
     },[])
     return (
         <div>
-            <h2>show the country list Lenght {countries.length}</h2>
-
+            <h2>show the country list Length {countries.length}</h2>
+            <div className="subResult">
             {
                 countries.map((country) =>{
                     return(
@@ -29,6 +29,10 @@ const Countries = () => {
                     )
                 })
             }
+
+            </div>
+
+           
         </div>
     );
 };

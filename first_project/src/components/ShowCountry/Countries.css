@@ -1,4 +1,12 @@
 h2{
-    color: aqua;
-    font-size: 40px;
+    color: rgb(224, 61, 74);
+    font-size: 20px;
+}
+
+.subResult{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
 }
