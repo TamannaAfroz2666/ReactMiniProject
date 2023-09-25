@@ -23,7 +23,9 @@ const Countries = () => {
                 countries.map((country) =>{
                     return(
                         <LoadCountry
-                         CountryName ={country}>
+                         CountryName ={country}
+                         key = {country.cca3}
+                         >
 
                          </LoadCountry>
                     )
