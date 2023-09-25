@@ -70,11 +70,28 @@ function LoadCountrys(){
     <div>
       <h1>Visiting every country of the world</h1>
       <h5>the lenght of the country is : {countries.length}</h5>
+
+      {
+        countries.map((country) => {
+          return(
+            // <p></p>
+            <p>{country.name.common}</p>
+          )
+        })
+      }
     </div>
   )
 }
 
+// data show korar jonno alada component create 
 
+function CountryShow (){
+  return(
+    <div>
+      
+    </div>
+  )
+}
 
 // show the name of user component 
 // function User(props){
