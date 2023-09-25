@@ -6,6 +6,11 @@ const Countries = () => {
     const [countries, setCountries] = useState([])
 
     useEffect(()=>{
+
+        // or can add from self json file 
+        // fetch(`data.json`) rest process same 
+
+
         fetch(`https://restcountries.com/v3.1/all`)
         .then(res =>res.json())
         .then(data =>{
