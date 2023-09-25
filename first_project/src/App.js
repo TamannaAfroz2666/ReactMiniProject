@@ -36,29 +36,41 @@ function ExternalUsers(){
   },[])
   return(
     <div>
-      <h1>External users</h1>
+     
+     {/* call the country component  */}
+     <LoadCountrys></LoadCountrys>
 
-      {
+      {/* {
         users.map((user) =>{
           return(
             <User userName = {user.name} userEmail = {user.email} ></User>
           )
         })
-      }
+      } */}
     </div>
   )
 }
 
-// show the name of user component 
-
-function User(props){
+// country component 
+function LoadCountrys(){
   return(
     <div>
-      <h1>User name is: {props.userName}</h1>
-      <h2>user email is : {props.userEmail}</h2>
+      <h1>Visiting every country of the world</h1>
     </div>
   )
 }
+
+
+
+// show the name of user component 
+// function User(props){
+//   return(
+//     <div>
+//       <h1>User name is: {props.userName}</h1>
+//       <h2>user email is : {props.userEmail}</h2>
+//     </div>
+//   )
+// }
 
 
 
