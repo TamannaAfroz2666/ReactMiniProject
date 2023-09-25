@@ -1,21 +1,19 @@
 // import logo from './logo.svg';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import './App.css';
+import Countries from './components/ShowCountry/Countries';
 
 function App() {
-  // const nayoks = ['sakib', 'kobir', 'omuk', 'tomuk', 'taimur']
+ 
   return (
     <div className="App">
+      <Countries></Countries>
 
-<LoadCountrys></LoadCountrys>
+    
 
-      {/* {
-        nayoks.map(nayok => 
-          <Person  name= {nayok}></Person>
-        )
-      } */}
+     
 
-      {/* <ExternalUsers></ExternalUsers> */}
+      
     </div>
   );
 }
@@ -54,44 +52,44 @@ function App() {
 // }
 
 // country component 
-function LoadCountrys(){
-  const  [countries, setCountries] = useState([]);
-  useEffect(() =>{
-    // get api called in way of fetch
-    fetch(`https://restcountries.com/v3.1/all`)
-    .then(res => res.json())
-    .then(data =>{
-      console.log( 'country data is',data);
-      setCountries(data);
-    })
+// function LoadCountrys(){
+//   const  [countries, setCountries] = useState([]);
+//   useEffect(() =>{
+//     // get api called in way of fetch
+//     fetch(`https://restcountries.com/v3.1/all`)
+//     .then(res => res.json())
+//     .then(data =>{
+//       console.log( 'country data is',data);
+//       setCountries(data);
+//     })
 
-  },[])
-  return(
-    <div>
-      <h1>Visiting every country of the world</h1>
-      <h5>the lenght of the country is : {countries.length}</h5>
+//   },[])
+//   return(
+//     <div>
+//       <h1>Visiting every country of the world</h1>
+//       <h5>the lenght of the country is : {countries.length}</h5>
 
-      {
-        countries.map((country) => {
-          return(
-            <CountryShow CountryName = {country.name.common} population = {country.population}></CountryShow>
-          )
-        })
-      }
-    </div>
-  )
-}
+//       {
+//         countries.map((country) => {
+//           return(
+//             <CountryShow CountryName = {country.name.common} population = {country.population}></CountryShow>
+//           )
+//         })
+//       }
+//     </div>
+//   )
+// }
 
-// data show korar jonno alada component create 
+// // data show korar jonno alada component create 
 
-function CountryShow (props){
-  return(
-    <div>
-      <h1>Country name: {props.CountryName} </h1>
-      <p>population is: {props.population}</p>
-    </div>
-  )
-}
+// function CountryShow (props){
+//   return(
+//     <div>
+//       <h1>Country name: {props.CountryName} </h1>
+//       <p>population is: {props.population}</p>
+//     </div>
+//   )
+// }
 
 // show the name of user component 
 // function User(props){
