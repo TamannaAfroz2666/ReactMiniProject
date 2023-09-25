@@ -74,8 +74,7 @@ function LoadCountrys(){
       {
         countries.map((country) => {
           return(
-            // <p></p>
-            <p>{country.name.common}</p>
+            <CountryShow CountryName = {country.name.common}></CountryShow>
           )
         })
       }
@@ -85,10 +84,10 @@ function LoadCountrys(){
 
 // data show korar jonno alada component create 
 
-function CountryShow (){
+function CountryShow (props){
   return(
     <div>
-      
+      <h1>Country name: {props.CountryName} </h1>
     </div>
   )
 }
