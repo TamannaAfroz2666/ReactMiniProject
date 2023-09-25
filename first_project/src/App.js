@@ -7,55 +7,69 @@ function App() {
   return (
     <div className="App">
 
+<LoadCountrys></LoadCountrys>
+
       {/* {
         nayoks.map(nayok => 
           <Person  name= {nayok}></Person>
         )
       } */}
 
-      <ExternalUsers></ExternalUsers>
+      {/* <ExternalUsers></ExternalUsers> */}
     </div>
   );
 }
 
 // add new component 
 
-function ExternalUsers(){
-  const [users, setUsers] = useState([]);
-  useEffect(()=>{
-    fetch(`https://jsonplaceholder.typicode.com/users`)
-    .then(res =>res.json())
-    .then(data =>{
-      console.log('the api list is:', data);
-     setUsers(data);
-     console.log('the user data is ', users);
+// function ExternalUsers(){
+//   const [users, setUsers] = useState([]);
+//   useEffect(()=>{
+//     fetch(`https://jsonplaceholder.typicode.com/users`)
+//     .then(res =>res.json())
+//     .then(data =>{
+//       console.log('the api list is:', data);
+//      setUsers(data);
+//      console.log('the user data is ', users);
       
 
+//     })
+
+//   },[])
+//   return(
+//     <div>
+     
+//      {/* call the country component  */}
+//      <LoadCountrys></LoadCountrys>
+
+//       {/* {
+//         users.map((user) =>{
+//           return(
+//             <User userName = {user.name} userEmail = {user.email} ></User>
+//           )
+//         })
+//       } */}
+//     </div>
+//   )
+// }
+
+// country component 
+function LoadCountrys(){
+  const  [countries, setCountries] = useState([]);
+  useEffect(() =>{
+    // get api called in way of fetch
+    fetch(`https://restcountries.com/v3.1/all`)
+    .then(res => res.json())
+    .then(data =>{
+      console.log( 'country data is',data);
+      setCountries(data);
     })
 
   },[])
   return(
     <div>
-     
-     {/* call the country component  */}
-     <LoadCountrys></LoadCountrys>
-
-      {/* {
-        users.map((user) =>{
-          return(
-            <User userName = {user.name} userEmail = {user.email} ></User>
-          )
-        })
-      } */}
-    </div>
-  )
-}
-
-// country component 
-function LoadCountrys(){
-  return(
-    <div>
       <h1>Visiting every country of the world</h1>
+      <h5>the lenght of the country is : {countries.length}</h5>
     </div>
   )
 }
