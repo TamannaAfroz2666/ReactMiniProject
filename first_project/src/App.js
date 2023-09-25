@@ -74,7 +74,7 @@ function LoadCountrys(){
       {
         countries.map((country) => {
           return(
-            <CountryShow CountryName = {country.name.common}></CountryShow>
+            <CountryShow CountryName = {country.name.common} population = {country.population}></CountryShow>
           )
         })
       }
@@ -88,6 +88,7 @@ function CountryShow (props){
   return(
     <div>
       <h1>Country name: {props.CountryName} </h1>
+      <p>population is: {props.population}</p>
     </div>
   )
 }
