@@ -63,6 +63,13 @@ const AssignmentMark = () => {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
+                <Legend />
+                <Line
+                    type="monotone"
+                    dataKey="Quize"
+                    stroke="#8884d8"
+                    activeDot={{ r: 8 }}
+                />
 
             </LineChart>
 
