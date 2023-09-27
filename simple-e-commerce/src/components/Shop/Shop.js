@@ -25,14 +25,17 @@ const Shop = () => {
         for(const id in storedCard){
             // console.log('id is', id);
             const addedProduct = products.find(product=> product.id === id );
-            console.log('addedProduct', addedProduct);         
-            //    if( product.id === id){
-            //     console.log('addedProduct',addedProduct);
-            //    }
-            
+           
+            if(addedProduct){
+                // quantity ber kora 
+                const quantity = storedCard[id];
+                addedProduct.quantity = quantity;
+                console.log('addedProduct', addedProduct);
+            }         
+         
         }
 
-    },[]);
+    },[products]);
 
     // use button event handler 
     const addToCard = (product) => {
