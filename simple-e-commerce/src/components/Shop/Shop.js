@@ -21,6 +21,7 @@ const Shop = () => {
     useEffect(() =>{
         const storedCard = getStoredCard();
         console.log('storedCard', storedCard);
+        const saveCart = [];
         // use for in coz object er moddhey loop used 
         for(const id in storedCard){
             // console.log('id is', id);
@@ -31,9 +32,13 @@ const Shop = () => {
                 const quantity = storedCard[id];
                 addedProduct.quantity = quantity;
                 console.log('addedProduct', addedProduct);
+                // add new array to store card info
+                saveCart.push(addedProduct) ;
+
             }         
          
         }
+        setCart(saveCart);
 
     },[products]);
 
