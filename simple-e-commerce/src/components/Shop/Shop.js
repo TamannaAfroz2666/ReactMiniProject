@@ -18,9 +18,11 @@ const Shop = () => {
 
     },[]);
 
+
+// data get from localStorage with quantity  
     useEffect(() =>{
         const storedCard = getStoredCard();
-        console.log('storedCard', storedCard);
+        // console.log('storedCard', storedCard);
         const saveCart = [];
         // use for in coz object er moddhey loop used 
         for(const id in storedCard){
@@ -44,14 +46,17 @@ const Shop = () => {
 
     // use button event handler 
     const addToCard = (product) => {
-        console.log('product', product);
-        let newCard =[]
+        // console.log('product', product);
+        let newCard =[];
         // je card er id new er id te ace kina 
-        const exists = cart.find(productHave => productHave.id === product.id);
+       
+     const exists = cart.find(productHave => productHave.id === product.id);
+    //  quantity ace kina 
         if(!exists){
+
             // jodi na thake quantity 
             product.quantity = 1;
-            newCard = [...cart, product]
+            newCard = [...cart, product];
         }
         else{
             const rest = cart.filter(productRest => productRest.id !== product.id);
@@ -62,7 +67,7 @@ const Shop = () => {
 
         // const newCart = [...cart, product];
         setCart(newCard);
-        addToDb(product.id)
+        addToDb(product.id);
     }
     return (
         <div className='shop-container'>
