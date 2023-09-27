@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
-import { addToDb } from '../../utilities/fakedb';
+import { addToDb, getStoredCard } from '../../utilities/fakedb';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -16,7 +16,23 @@ const Shop = () => {
             setProducts(data);
         })
 
-    },[])
+    },[]);
+
+    useEffect(() =>{
+        const storedCard = getStoredCard();
+        console.log('storedCard', storedCard);
+        // use for in coz object er moddhey loop used 
+        for(const id in storedCard){
+            // console.log('id is', id);
+            const addedProduct = products.find(product=> product.id === id );
+            console.log('addedProduct', addedProduct);         
+            //    if( product.id === id){
+            //     console.log('addedProduct',addedProduct);
+            //    }
+            
+        }
+
+    },[]);
 
     // use button event handler 
     const addToCard = (product) => {

@@ -3,7 +3,7 @@ import './Cart.css'
 
 const Cart = ({carts}) => {
 
-    console.log('cart', carts);
+    // console.log('cart', carts);
     let total = 0;
     let shipping = 0
     for(const productAll of carts){
