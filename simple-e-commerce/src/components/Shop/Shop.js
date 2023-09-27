@@ -45,9 +45,23 @@ const Shop = () => {
     // use button event handler 
     const addToCard = (product) => {
         console.log('product', product);
+        let newCard =[]
+        // je card er id new er id te ace kina 
+        const exists = cart.find(productHave => productHave.id === product.id);
+        if(!exists){
+            // jodi na thake quantity 
+            product.quantity = 1;
+            newCard = [...cart, product]
+        }
+        else{
+            const rest = cart.filter(productRest => productRest.id !== product.id);
+            exists.quantity = exists.quantity + 1;
+            newCard = [...rest, exists];
 
-        const newCart = [...cart, product];
-        setCart(newCart);
+        }
+
+        // const newCart = [...cart, product];
+        setCart(newCard);
         addToDb(product.id)
     }
     return (
