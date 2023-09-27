@@ -12,7 +12,7 @@ const addToDb = id => {
     }
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
 }
-
+// remove from db 
 const removeFromDb = id => {
     const shoppingCart = getShoppingCart();
     if (id in shoppingCart) {
