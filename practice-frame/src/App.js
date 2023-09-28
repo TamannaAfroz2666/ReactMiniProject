@@ -6,20 +6,26 @@ import PhoneBar from './components/PhoneBar/PhoneBar';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './components/Home/Home';
 import About from './components/About/About';
+import Main from './Layout/Main/Main';
 
 function App() {
-  const router = createBrowserRouter([
-    {path:''},
 
+  // nested route 
+  const router = createBrowserRouter([
+   {path: '/', element:<Main></Main>, children:[
     {path: 'home', element: <Home></Home>},
     {path: 'about', element: <About></About>}
+   ] },
+
+    
+   
   ])
   return (
     <div>
       <RouterProvider router={router}></RouterProvider>
       {/* <Header></Header> */}
       <AssignmentMark></AssignmentMark> <br />
-      <PhoneBar></PhoneBar>
+      {/* <PhoneBar></PhoneBar> */}
 
      
     </div>
