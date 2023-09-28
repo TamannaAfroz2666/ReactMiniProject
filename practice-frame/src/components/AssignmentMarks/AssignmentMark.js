@@ -56,7 +56,7 @@ const AssignmentMark = () => {
     ];
     return (
         <div>
-            <h1>Assignment</h1>
+            {/* <h1>Assignment</h1> */}
             <LineChart width={500} height={400} data={data}>
                 <Line type="monotone" dataKey="Marks" stroke="#82ca9d" />
                 <XAxis dataKey="name" />

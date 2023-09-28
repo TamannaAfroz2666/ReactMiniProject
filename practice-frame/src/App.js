@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Main from './Layout/Main/Main';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 function App() {
 
@@ -15,16 +16,16 @@ function App() {
    {path: '/', element:<Main></Main>, children:[
     {path: 'home', element: <Home></Home>},
     {path: 'about', element: <About></About>}
-   ] },
+   ]},
 
-    
+    {path: '*' , element: <NotFoundPage></NotFoundPage>}
    
   ])
   return (
     <div>
       <RouterProvider router={router}></RouterProvider>
       {/* <Header></Header> */}
-      <AssignmentMark></AssignmentMark> <br />
+      {/* <AssignmentMark></AssignmentMark> <br /> */}
       {/* <PhoneBar></PhoneBar> */}
 
      
